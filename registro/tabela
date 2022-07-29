@@ -1,0 +1,47 @@
+create table Users(
+id INT AUTO_INCREMENT NOT NULL,
+name VARCHAR (255) NOT NULL,
+email VARCHAR (255) NOT NULL,
+passord VARCHAR(255) NOT NULL,
+profileId INT,
+PRIMARY KEY (id),
+FOREIGN KEY(profileId)REFERENCES Profiles (id)
+);
+
+CREATE TABLE Profiles(
+id INT AUTO_INCREMENT NOT NULL,
+name VARCHAR (255) NOT NULL,
+createdAT DATETIME NOT NULL,
+updatedAT DATETIME NOT NULL,
+PRIMARY KEY (id)
+);
+
+CREATE TABLE Notes(
+id INT AUTO_INCREMENT NOT NULL,
+name VARCHAR (255) NOT NULL,
+createdAT DATETIME NOT NULL,
+updatedAT DATETIME NOT NULL,
+PRIMARY KEY (id)
+);
+
+INSERT INTO Profiles(
+name,
+createdAt,
+updatedAt
+)
+values(
+'Master',
+now(),
+now()
+);
+
+INSERT INTO Profiles(
+name,
+createdAt,
+updatedAt
+)
+values(
+'User',
+now(),
+now()
+);
